@@ -1,0 +1,19 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "C:\\Users\\e09sped0\\AppData\\Local\\Arduino15\\packages\\adafruit\\hardware\\samd\\1.5.3\\**",
+                "C:\\Users\\dosp\\AppData\\Local\\Arduino15\\packages\\adafruit\\hardware\\samd\\1.5.3\\**",
+                "D:\\UserData\\e09sped0\\Documents\\Arduino\\libraries\\**"
+
+            ],
+            "forcedInclude": [
+                "C:\\Users\\e09sped0\\AppData\\Local\\Arduino15\\packages\\adafruit\\hardware\\samd\\1.5.3\\cores\\arduino\\Arduino.h",
+                "C:\\Users\\dosp\\AppData\\Local\\Arduino15\\packages\\adafruit\\hardware\\samd\\1.5.3\\cores\\arduino\\Arduino.h"
+            ],
+            "intelliSenseMode": "msvc-x64"
+        }
+    ],
+    "version": 4
+}

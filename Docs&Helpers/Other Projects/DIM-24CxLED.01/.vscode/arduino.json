@@ -1,0 +1,7 @@
+{
+    "board": "adafruit:samd:adafruit_itsybitsy_m0",
+    "configuration": "usbstack=arduino,debug=off",
+    "output": "../build",
+    "sketch": "DIM-24CxLED.01.ino",
+    "port": "COM9"
+}
