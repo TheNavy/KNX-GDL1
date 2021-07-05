@@ -1,3 +1,6 @@
+#define min(a,b) ((a)<(b)?(a):(b))
+#define max(a,b) ((a)>(b)?(a):(b))
+
 //DPT3.007 stuff
 #define DPT3_007_MASK_DIRECTION B1000
 #define DPT3_007_INCREASE       B1000
