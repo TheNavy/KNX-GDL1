@@ -28,7 +28,7 @@
 #include <SdFat.h>
 
 #ifndef EEPROM_EMULATION_SIZE
-#define EEPROM_EMULATION_SIZE 1024
+#define EEPROM_EMULATION_SIZE 2048
 #endif
 
 #define EEPROM_FILENAME "/eeprom1.bin"
