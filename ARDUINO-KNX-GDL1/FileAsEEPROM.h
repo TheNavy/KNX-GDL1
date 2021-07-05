@@ -1,6 +1,7 @@
 /*
   EEPROM like API that uses a file on a fat file system
   Copyright (c)2019 com@sirsydom.de SirSydom All rights reserved.
+  Copyright (c)2021 richard@die-haasen.camp TheNavy -> Modifiation to work with Adafruit ItsyBitsy M0 Onboard Chip!
 
   This library is free software; you can redistribute it and/or
   modify it under the terms of the GNU Lesser General Public
