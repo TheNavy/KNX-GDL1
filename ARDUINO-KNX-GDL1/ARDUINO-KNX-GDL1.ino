@@ -74,6 +74,15 @@ bool buttonPressed = false;
 bool ledTestMode = false;
 bool pixelsShow = false;
 
+//GDL-Function
+bool DoorUp = false;
+bool DoorDown = false;
+enum DoorOpenClose { down, halfOpen, up };
+DoorOpenClose Door;
+DoorOpenClose lastDoorState;
+bool doorStatus = false; //True if doorSetScene has started
+bool doorDisable = false; //True if Door Movement has finished & Motor still on
+
 //XML group: LED
 uint8_t ledType = 0xC6; // ~ NEO_RGBW, see Adafruit_NeoPixel.h for more infos
 bool rgbw = true;
@@ -156,6 +165,15 @@ bool psStateChecked = false;
 unsigned long psStateCheckedMillis = 0;
 bool lastState = false;
 
+//XML group: GDL Functions
+uint8_t sceneMove = 0;
+uint8_t sceneClose = 0;
+uint8_t sceneOpen = 0;
+uint8_t sceneNight = 0;
+bool nightMode = false;
+bool doorMoving = false;
+
+
 // ################################################
 // ### create some instances
 // ################################################
@@ -183,6 +201,7 @@ void showPixels ();
 #include "scenes.h"
 #include "button.h"
 #include "knx_events.h"
+#include "GDL_functions.h"
 
 // ################################################
 // ### DotStar LED
@@ -236,11 +255,18 @@ void commitMemory()
 // ################################################
 
 void setup() {
+    // Program LED & Button
     pinMode(PROG_LED_PIN, OUTPUT);
     digitalWrite(PROG_LED_PIN, LOW);
     pinMode(PROG_BUTTON_PIN, INPUT_PULLUP);
-    pinMode(POWER_SUPPLY_PIN, INPUT);
     attachInterrupt(PROG_BUTTON_PIN, progButtonPressed, CHANGE);
+    // PowerSupplyPin
+    pinMode(POWER_SUPPLY_PIN, INPUT);
+    // Sensor Pin
+    pinMode(SENS_UP_PIN, INPUT_PULLUP);
+    attachInterrupt(SENS_UP_PIN, sensUpActive, CHANGE);
+    pinMode(SENS_DOWN_PIN, INPUT_PULLUP);
+    attachInterrupt(SENS_DOWN_PIN, sensDownActive, CHANGE);
 
     // DotStar LED Initialize
     px.begin(); // Initialize pins for output
@@ -328,6 +354,12 @@ void setup() {
         if(!powerSupplyControl){
             powerSupplyState = true;
         }
+        //XML group: GDL Functions
+        sceneMove = Konnekting.getUINT8Param(PARAM_scene_move);
+        sceneClose = Konnekting.getUINT8Param(PARAM_scene_close);
+        sceneOpen = Konnekting.getUINT8Param(PARAM_scene_open);
+        sceneNight = Konnekting.getUINT8Param(PARAM_scene_night);
+        
 #ifdef KDEBUG
         px.setPixelColor(0, 63, 136, 143); // cyan
         Debug.println(F("User Colors:"));
@@ -462,5 +494,7 @@ void loop() {
       			Knx.write(COMOBJ_scene_state, sendSceneNumber);
       			sendSceneNumber = 0xFF;
     		}
+       //GDL-Function
+       setDoorScene();
     }
 }

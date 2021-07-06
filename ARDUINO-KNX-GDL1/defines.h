@@ -62,3 +62,8 @@
 #define M_OFF_WAIT  2
 #define M_ON        1
 #define M_ON_WAIT   3
+
+//GDL Program Settings
+const int doorMoveTime = 15000;
+const int doorDeadTime = 2000;
+const int doorMotorDeadTime = 60000;

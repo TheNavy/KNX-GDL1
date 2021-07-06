@@ -36,6 +36,11 @@
 #define COMOBJ_m4rgb 31
 #define COMOBJ_m4rgbw 32
 #define COMOBJ_power_supply 33
+#define COMOBJ_scene_out 34
+#define COMOBJ_door_close 35
+#define COMOBJ_door_open 36
+#define COMOBJ_door_moving 37
+#define COMOBJ_nightMode 38
 #define PARAM_led_type 0
 #define PARAM_number_leds_strip 1
 #define PARAM_first_on_value 2
@@ -99,6 +104,10 @@
 #define PARAM_m4w 60
 #define PARAM_ps_control 61
 #define PARAM_ps_delay_off 62
+#define PARAM_scene_move 63
+#define PARAM_scene_close 64
+#define PARAM_scene_open 65
+#define PARAM_scene_night 66
         
 KnxComObject KnxDevice::_comObjectsList[] = {
     /* Index 0 - dim_sw */ KnxComObject(KNX_DPT_1_001, 0x2b),
@@ -134,7 +143,12 @@ KnxComObject KnxDevice::_comObjectsList[] = {
     /* Index 30 - m4perc */ KnxComObject(KNX_DPT_5_001, 0x2a),
     /* Index 31 - m4rgb */ KnxComObject(KNX_DPT_232_600, 0x2a),
     /* Index 32 - m4rgbw */ KnxComObject(KNX_DPT_251_600, 0x2a),
-    /* Index 33 - power_supply */ KnxComObject(KNX_DPT_1_001, 0x34)
+    /* Index 33 - power_supply */ KnxComObject(KNX_DPT_1_001, 0x34),
+    /* Index 34 - scene_out */ KnxComObject(KNX_DPT_17_001, 0x34),
+    /* Index 35 - door_close */ KnxComObject(KNX_DPT_1_001, 0x34),
+    /* Index 36 - door_open */ KnxComObject(KNX_DPT_1_001, 0x34),
+    /* Index 37 - door_moving */ KnxComObject(KNX_DPT_1_001, 0x2b),
+    /* Index 38 - nightMode */ KnxComObject(KNX_DPT_1_001, 0x2b)
 };
 const byte KnxDevice::_numberOfComObjects = sizeof (_comObjectsList) / sizeof (KnxComObject); // do not change this code
        
@@ -201,6 +215,10 @@ byte KonnektingDevice::_paramSizeList[] = {
     /* Index 59 - m4b */ PARAM_UINT8,
     /* Index 60 - m4w */ PARAM_UINT8,
     /* Index 61 - ps_control */ PARAM_UINT8,
-    /* Index 62 - ps_delay_off */ PARAM_UINT8
+    /* Index 62 - ps_delay_off */ PARAM_UINT8,
+    /* Index 63 - scene_move */ PARAM_UINT8,
+    /* Index 64 - scene_close */ PARAM_UINT8,
+    /* Index 65 - scene_open */ PARAM_UINT8,
+    /* Index 66 - scene_night */ PARAM_UINT8
 };
 const int KonnektingDevice::_numberOfParams = sizeof (_paramSizeList); // do not change this code

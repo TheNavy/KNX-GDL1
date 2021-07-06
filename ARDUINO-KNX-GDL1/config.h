@@ -22,7 +22,9 @@
 #define PROG_LED_PIN 13
 #define PROG_BUTTON_PIN 7
 #define LED_STRIP_PIN 5
-#define POWER_SUPPLY_PIN 8 //active low
+#define POWER_SUPPLY_PIN 4 //active low
+#define SENS_UP_PIN 9
+#define SENS_DOWN_PIN 10
 
 //pin definitions for the ItsyBitsy M0 Dotstar LED
 #define DATAPIN    41

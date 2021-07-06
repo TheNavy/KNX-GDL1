@@ -48,3 +48,29 @@ void progButtonPressed(){
             }
     }
 }
+
+void sensUpActive(){
+  DoorUp = digitalRead(SENS_UP_PIN);
+  if(DoorUp){
+    Door = up;
+  }else{
+    if(DoorDown){
+      Door = down;
+    }else{
+      Door = halfOpen;
+    }
+  }
+}
+
+void sensDownActive(){
+  DoorDown = digitalRead(SENS_DOWN_PIN);
+  if(DoorDown){
+    Door = down;
+  }else{
+    if(DoorUp){
+      Door = up;
+    }else{
+      Door = halfOpen;
+    }
+  }
+}

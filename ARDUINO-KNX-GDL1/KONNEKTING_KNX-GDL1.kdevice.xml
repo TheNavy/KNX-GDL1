@@ -280,6 +280,24 @@
                     <Value Type="uint8" Default="1E" Options="" Min="00" Max="B4"/>
                 </Parameter>
             </ParameterGroup>
+            <ParameterGroup Name="GDL Functions" Id="11">
+                <Parameter Id="63" IdName="scene_move">
+                    <Description>Activate Scene -> Move</Description>
+                    <Value Type="uint8" Default="01" Options="" Min="00" Max="40"/>
+                </Parameter>
+                <Parameter Id="64" IdName="scene_close">
+                    <Description>Activate Scene -> Close</Description>
+                    <Value Type="uint8" Default="01" Options="" Min="00" Max="40"/>
+                </Parameter>
+                <Parameter Id="65" IdName="scene_open">
+                    <Description>Activate Scene -> Open</Description>
+                    <Value Type="uint8" Default="01" Options="" Min="00" Max="40"/>
+                </Parameter>
+                <Parameter Id="66" IdName="scene_night">
+                    <Description>Activate Scene -> Night</Description>
+                    <Value Type="uint8" Default="01" Options="" Min="00" Max="40"/>
+                </Parameter>
+            </ParameterGroup>
         </Parameters>
         <CommObjects>
             <CommObject Id="0" IdName="dim_sw">
@@ -485,6 +503,36 @@
                 <Function>Switch</Function>
                 <DataPointType>1.001</DataPointType>
                 <Flags>52</Flags>
+            </CommObject>
+            <CommObject Id="34" IdName="scene_out">
+                <Name>Scene Output from IO</Name>
+                <Function>Value</Function>
+                <DataPointType>17.001</DataPointType>
+                <Flags>52</Flags>
+            </CommObject>
+            <CommObject Id="35" IdName="door_close">
+                <Name>Sensor Door Close</Name>
+                <Function>Switch</Function>
+                <DataPointType>1.001</DataPointType>
+                <Flags>52</Flags>
+            </CommObject>
+            <CommObject Id="36" IdName="door_open">
+                <Name>Sensor Door Open</Name>
+                <Function>Switch</Function>
+                <DataPointType>1.001</DataPointType>
+                <Flags>52</Flags>
+            </CommObject>
+            <CommObject Id="37" IdName="door_moving">
+                <Name>Motor Signal Input</Name>
+                <Function>Switch</Function>
+                <DataPointType>1.001</DataPointType>
+                <Flags>43</Flags>
+            </CommObject>
+            <CommObject Id="38" IdName="nightMode">
+                <Name>NightMode</Name>
+                <Function>State</Function>
+                <DataPointType>1.001</DataPointType>
+                <Flags>43</Flags>
             </CommObject>
         </CommObjects>
         <Dependencies>

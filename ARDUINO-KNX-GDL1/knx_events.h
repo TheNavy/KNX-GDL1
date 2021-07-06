@@ -283,6 +283,20 @@ void knxEvents(byte comObjIndex) {
             }
             statusM4 = true;
             break;
+        case COMOBJ_door_moving: //Input from Motor
+            if (Knx.read(comObjIndex)){
+                doorMoving = true;
+            }else{
+                doorMoving = false;
+            }
+            break;
+        case COMOBJ_nightMode: //Night Mode
+            if (Knx.read(comObjIndex)){
+                nightMode = true;
+            }else{
+                nightMode = false;
+            }
+            break;
         default:
             break;
     }
