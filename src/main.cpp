@@ -38,6 +38,12 @@ cyan:   Normal Mode with Serial Debug
 // ################################################
 // ### VIRTUAL_EEPROM - don't use this ;)
 // ################################################
+//#define VIRTUAL_EEPROM
+
+// ################################################
+// ### Debug MODE
+// ################################################
+
 #define KDEBUG // comment this line to disable DEBUG mode
 
 // ################################################
@@ -263,7 +269,6 @@ void setup() {
 #else
     EEPROM.setStorage(&my_eeprom_storage);
 #endif
-
 
     Konnekting.setMemoryReadFunc(&readMemory);
     Konnekting.setMemoryWriteFunc(&writeMemory);
