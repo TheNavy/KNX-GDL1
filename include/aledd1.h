@@ -11,10 +11,10 @@ void SERCOM2_Handler()
 }
 
 //Hardware settings 
-#define PROG_BUTTON_PIN 2 //active low
-#define PROG_LED_PIN 8
-#define LED_STRIP_PIN 22
-#define POWER_SUPPLY_PIN 38 //active low
+#define PROG_BUTTON_PIN 10 //active low
+#define PROG_LED_PIN 11
+#define LED_STRIP_PIN 5
+#define POWER_SUPPLY_PIN 9 //active low
 #define EEPROM_EMULATION_SIZE 2048
 
 // custom serial port preparation function

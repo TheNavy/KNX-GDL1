@@ -2,8 +2,8 @@
 // ### IO Configuration
 // ################################################
 
-#define SENS_UP_PIN 9
-#define SENS_DOWN_PIN 10
+#define SENS_UP_PIN 3
+#define SENS_DOWN_PIN 4
 
 //pin definitions for the ItsyBitsy M0 Dotstar LED
 #define DATAPIN    41
