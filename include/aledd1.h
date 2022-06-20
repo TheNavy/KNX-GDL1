@@ -2,8 +2,8 @@
 
 #include "wiring_private.h" //for pinPeripheral
 
-//create a new Serial on Pins 1=TX and 3=RX
-Uart SerialKNX (&sercom2, 3, 1, SERCOM_RX_PAD_1, UART_TX_PAD_2); //+pinPeripheral
+//create a new Serial on Pins 1=TX and 0=RX
+Uart SerialKNX (&sercom2, 0, 1, SERCOM_RX_PAD_3, UART_TX_PAD_2); // Onboard TX&RX Pin
 //Interrupt handler for SerialKNX
 void SERCOM2_Handler()
 {
@@ -11,17 +11,17 @@ void SERCOM2_Handler()
 }
 
 //Hardware settings 
-#define PROG_BUTTON_PIN 10 //active low
-#define PROG_LED_PIN 11
-#define LED_STRIP_PIN 5
-#define POWER_SUPPLY_PIN 9 //active low
+#define PROG_BUTTON_PIN 3 //active low
+#define PROG_LED_PIN LED_BUILTIN
+#define LED_STRIP_PIN 5 //5V Pin!
+#define POWER_SUPPLY_PIN 4 //active low
 #define EEPROM_EMULATION_SIZE 2048
 
 // custom serial port preparation function
 void prepareSerial(){
     Debug.println(F("Prepare serial"));
     SerialKNX.begin(19200, SERIAL_8E1);
-    pinPeripheral(3, PIO_SERCOM_ALT);
+    pinPeripheral(0, PIO_SERCOM_ALT);
     pinPeripheral(1, PIO_SERCOM_ALT);
     Debug.println(F("Prepare serial *DONE*"));
 }

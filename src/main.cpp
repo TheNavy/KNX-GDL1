@@ -44,7 +44,7 @@ cyan:   Normal Mode with Serial Debug
 // ### Debug MODE
 // ################################################
 
-#define KDEBUG // comment this line to disable DEBUG mode
+//#define KDEBUG // comment this line to disable DEBUG mode
 
 // ################################################
 // ### Include used Librarys
@@ -278,6 +278,8 @@ void setup() {
     Konnekting.setPrepareSerialFunc(&prepareSerial);
 #endif
     Konnekting.init(SerialKNX, &progLed, MANUFACTURER_ID, DEVICE_ID, REVISION);
+    px.setPixelColor(0, 50, 50, 50); // white
+    px.show();
  
 #ifndef VIRTUAL_EEPROM
     for (int i = 0; i < Konnekting.getMemoryUserSpaceStart(); i++) {
@@ -355,8 +357,13 @@ void setup() {
         sceneClose = Konnekting.getUINT8Param(PARAM_scene_close);
         sceneOpen = Konnekting.getUINT8Param(PARAM_scene_open);
         sceneNight = Konnekting.getUINT8Param(PARAM_scene_night);
+
+        px.setPixelColor(0, 0, 50, 0); // blue
+        px.show();
         
 #ifdef KDEBUG
+        px.setPixelColor(0, 0, 50, 50); // cyan
+        px.show();
         Debug.println(F("User Colors:"));
         Debug.println(F("Idx\tR\tG\tB\tW"));
         for (byte uc = 0; uc < USERCOLORS; uc++) {
@@ -376,6 +383,8 @@ void setup() {
     if (Konnekting.isFactorySetting())
     {
         Debug.println(F("Device is in factory mode. Starting programming mode..."));
+        px.setPixelColor(0, 0, 0, 50); // blue
+        px.show();
         testStrip();
         Konnekting.setProgState(true);
         Debug.println(F("free ram: %d bytes"), Debug.freeRam());

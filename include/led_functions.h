@@ -29,7 +29,7 @@ void setDimmingCurves(){
 }
 
 void progLed(bool state){
-    digitalWrite(PROG_LED_PIN, state);
+    digitalWrite(PROG_LED_PIN, !state);
 }
 
 //test witch strip we have
