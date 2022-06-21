@@ -37,15 +37,16 @@ void progButtonPressed(){
     }
     //button released
     if(!btnState){
-        unsigned long clickDuration = millis() - clickMillis;
-        buttonPressed = false;
-        if(clickDuration >= DEBOUNCE)
-            if(clickDuration > longClickDurationBtn){
-                    taskOnLongClick();
-            }else{
-                    taskOnShortClick();
-            }
-    }
+      unsigned long clickDuration = millis() - clickMillis;
+      buttonPressed = false;
+      if(clickDuration >= DEBOUNCE){
+        if(clickDuration > longClickDurationBtn){
+             taskOnLongClick();
+         }else{
+             taskOnShortClick();
+        }
+      }
+   }
 }
 
 void sensUpActive(){
@@ -59,6 +60,8 @@ void sensUpActive(){
       Door = halfOpen;
     }
   }
+  Debug.println(F("Status Door UP: %d "), DoorUp);
+  Debug.println(F("Status Door: %d "), Door);
 }
 
 void sensDownActive(){
@@ -72,4 +75,6 @@ void sensDownActive(){
       Door = halfOpen;
     }
   }
+  Debug.println(F("Status Door DOWN: %d "), DoorDown);
+  Debug.println(F("Status Door: %d "), Door);
 }

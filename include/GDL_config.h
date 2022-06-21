@@ -11,6 +11,14 @@
 #define NUMPIXELS   1
 
 // ################################################
+// ### Door Configuration
+// ################################################
+
+#define doorMoveTime  15000 //Maximum Time the Door needs
+#define doorDeadTime  2000 //Time between Motor starts & Sensor recognised
+#define doorMotorDeadTime  60000 //Dead time after one move
+
+// ################################################
 // ### KONNEKTING Configuration
 // ################################################
 

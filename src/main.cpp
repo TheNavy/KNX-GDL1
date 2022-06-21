@@ -103,13 +103,15 @@ bool ledTestMode = false;
 bool pixelsShow = false;
 
 //GDL-Function
-bool DoorUp = false;
-bool DoorDown = false;
+bool DoorUp = false; //True if Door is UP
+bool DoorDown = false; //True if Door is DOWN
 enum DoorOpenClose { down, halfOpen, up };
 DoorOpenClose Door;
 DoorOpenClose lastDoorState;
 bool doorStatus = false; //True if doorSetScene has started
 bool doorDisable = false; //True if Door Movement has finished & Motor still on
+uint32_t startMillis = 0;
+uint32_t doorStatusMillis = 0;
 
 //XML group: LED
 uint8_t ledType = 0xC6; // ~ NEO_RGBW, see Adafruit_NeoPixel.h for more infos
@@ -263,6 +265,7 @@ void setup() {
    while (!SerialUSB);
     Debug.setPrintStream(&SerialUSB);;
 #endif
+
 #ifdef VIRTUAL_EEPROM
     initVirtualEeprom();
 #else

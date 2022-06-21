@@ -2,7 +2,7 @@ void knxEvents(byte comObjIndex) {
     Debug.println(F("knxEvents comObjIndex: %d"), comObjIndex);
     lastTask = currentTask;
     byte newTask = 0xFF;
-    byte tmpValue = 0;
+//    byte tmpValue = 0; UNUSED
     bool tmpBool = false;
     powerSupplyTurnOn = true; //dirty solution: if PS is off and LEDs are off and next command is "turn all off" PS will go on... and after timeout off. Is this a real use case?!
     switch (comObjIndex) {
