@@ -29,7 +29,7 @@ void setDimmingCurves(){
 }
 
 void progLed(bool state){
-    digitalWrite(PROG_LED_PIN, !state);
+    digitalWrite(PROG_LED_PIN, state);
 }
 
 //test witch strip we have
@@ -47,7 +47,8 @@ void testStrip(){
 #ifdef DEVELOPMENT    
     neopixels->begin(&sercom5, SERCOM5, SERCOM5_DMAC_ID_TX,  6, SPI_PAD_2_SCK_3, PIO_SERCOM);
 #else
-    neopixels->begin(&sercom4, SERCOM4, SERCOM4_DMAC_ID_TX, 22, SPI_PAD_0_SCK_3, PIO_SERCOM_ALT);
+    //neopixels->begin(&sercom4, SERCOM4, SERCOM4_DMAC_ID_TX, 22, SPI_PAD_0_SCK_3, PIO_SERCOM_ALT);
+    neopixels->begin(&sercom4, SERCOM4, SERCOM4_DMAC_ID_TX, 5, SPI_PAD_3_SCK_1, PIO_SERCOM_ALT); //LED@Pin5 Sercom_ALT 4.3
 #endif
     neopixels->setPixelColor(0, 255 , 0, 0, 0);
     neopixels->setPixelColor(1, 0, 255, 0, 0);
@@ -89,7 +90,8 @@ void initStrip(word pixel, byte type){
 #ifdef DEVELPMENT    
     neopixels->begin(&sercom5, SERCOM5, SERCOM5_DMAC_ID_TX,  6, SPI_PAD_2_SCK_3, PIO_SERCOM);
 #else
-    neopixels->begin(&sercom4, SERCOM4, SERCOM4_DMAC_ID_TX, 22, SPI_PAD_0_SCK_3, PIO_SERCOM_ALT);
+    //neopixels->begin(&sercom4, SERCOM4, SERCOM4_DMAC_ID_TX, 22, SPI_PAD_0_SCK_3, PIO_SERCOM_ALT);
+    neopixels->begin(&sercom4, SERCOM4, SERCOM4_DMAC_ID_TX, 5, SPI_PAD_3_SCK_1, PIO_SERCOM_ALT); //LED@Pin5 Sercom_ALT 4.3
 #endif
     neopixels->show();
     Debug.println(F("initPixel"));
