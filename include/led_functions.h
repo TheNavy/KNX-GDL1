@@ -44,7 +44,7 @@ void testStrip(){
     //there are only 600 LEDs alowed -> hardcoded
     if(neopixels) delete neopixels;
     neopixels = new Adafruit_NeoPixel_ZeroDMA(600, LED_STRIP_PIN, NEO_RGBW);
-#ifdef DEVELPMENT    
+#ifdef DEVELOPMENT    
     neopixels->begin(&sercom5, SERCOM5, SERCOM5_DMAC_ID_TX,  6, SPI_PAD_2_SCK_3, PIO_SERCOM);
 #else
     neopixels->begin(&sercom4, SERCOM4, SERCOM4_DMAC_ID_TX, 22, SPI_PAD_0_SCK_3, PIO_SERCOM_ALT);

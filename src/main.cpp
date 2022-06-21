@@ -43,7 +43,6 @@ cyan:   Normal Mode with Serial Debug
 // ################################################
 // ### Debug MODE
 // ################################################
-
 //#define KDEBUG // comment this line to disable DEBUG mode
 
 // ################################################

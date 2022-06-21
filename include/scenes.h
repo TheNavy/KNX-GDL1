@@ -60,7 +60,7 @@ void taskFunction(){
         case RAINBOW:
             rainbow();
             break;
-		    case SINGLERGB:
+		case SINGLERGB:
             singlergb();
             break;
         case TWINKYSTARS:
