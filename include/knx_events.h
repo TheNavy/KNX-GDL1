@@ -286,6 +286,9 @@ void knxEvents(byte comObjIndex) {
         case COMOBJ_nightMode:
             nightMode = Knx.read(COMOBJ_nightMode);
             break;
+        case COMOBJ_door_moving: //Input from Motor
+            doorMoving =  Knx.read(COMOBJ_door_moving);
+            break;
         default:
             break;
     }

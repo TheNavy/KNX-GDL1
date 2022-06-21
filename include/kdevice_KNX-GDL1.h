@@ -36,11 +36,11 @@
 #define COMOBJ_m4rgb 31
 #define COMOBJ_m4rgbw 32
 #define COMOBJ_power_supply 33
-#define COMOBJ_scene_out 34
-#define COMOBJ_door_close 35
-#define COMOBJ_door_open 36
-#define COMOBJ_door_moving 37
-#define COMOBJ_nightMode 38
+#define COMOBJ_nightMode 34
+#define COMOBJ_scene_out 35
+#define COMOBJ_door_close 36
+#define COMOBJ_door_open 37
+#define COMOBJ_door_moving 38
 #define PARAM_led_type 0
 #define PARAM_number_leds_strip 1
 #define PARAM_first_on_value 2
