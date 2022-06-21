@@ -25,7 +25,7 @@
 #define USER_COLOR_4 0x17 //24
 #define USER_COLOR_5 0x18 //25
 
-//Scenes 41 .. 52
+//Scenes 41 .. 53
 #define RAINBOW 0x28              //41
 #define SINGLERGB 0x29            //42
 #define SPARKLER 0x2A             //43
@@ -38,6 +38,7 @@
 
 #define WHIREMIDDLEON 0x32        //51
 #define WHIREMIDDLEOFF 0x33       //52
+#define NIGHTLIGHT 0x34           //53
 
 //Scene 61 .. 64
 #define TASK_RGB 0x3C

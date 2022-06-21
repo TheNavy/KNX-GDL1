@@ -41,6 +41,7 @@
 #define COMOBJ_door_close 36
 #define COMOBJ_door_open 37
 #define COMOBJ_door_moving 38
+#define COMOBJ_DayNight 39
 #define PARAM_led_type 0
 #define PARAM_number_leds_strip 1
 #define PARAM_first_on_value 2
@@ -148,7 +149,8 @@ KnxComObject KnxDevice::_comObjectsList[] = {
     /* Index 35 - scene_out */ KnxComObject(KNX_DPT_17_001, 0x34),
     /* Index 36 - door_close */ KnxComObject(KNX_DPT_1_001, 0x34),
     /* Index 37 - door_open */ KnxComObject(KNX_DPT_1_001, 0x34),
-    /* Index 38 - door_moving */ KnxComObject(KNX_DPT_1_001, 0x2b)
+    /* Index 38 - door_moving */ KnxComObject(KNX_DPT_1_001, 0x2b),
+    /* Index 39 - DayNight */ KnxComObject(KNX_DPT_1_001, 0x2b)
 };
 const byte KnxDevice::_numberOfComObjects = sizeof (_comObjectsList) / sizeof (KnxComObject); // do not change this code
        

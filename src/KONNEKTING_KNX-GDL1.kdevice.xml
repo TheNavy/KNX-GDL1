@@ -534,6 +534,12 @@
                 <DataPointType>1.001</DataPointType>
                 <Flags>43</Flags>
             </CommObject>
+            <CommObject Id="39" IdName="DayNight">
+                <Name>Toggle Day Night</Name>
+                <Function>State</Function>
+                <DataPointType>1.001</DataPointType>
+                <Flags>43</Flags>
+            </CommObject>
         </CommObjects>
 <!--        <Dependencies>
 <!- -rgb only- ->

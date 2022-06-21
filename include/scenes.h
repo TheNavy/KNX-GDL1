@@ -90,6 +90,9 @@ void taskFunction(){
         case WHIREMIDDLEOFF:
             whitemiddleoff();
             break;
+        case NIGHTLIGHT:
+            nightlight();
+            break;
 
         case TASK_RGB:
             if(acceptNewRGBW){

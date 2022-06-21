@@ -329,5 +329,9 @@ void whitemiddleon() {
   //ToDo:
 }
 void whitemiddleoff() {
+    //ToDo
+}
 
+void nightlight() {
+    //ToDo
 }

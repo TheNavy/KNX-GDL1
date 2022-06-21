@@ -105,9 +105,9 @@ bool pixelsShow = false;
 //GDL-Function
 bool DoorUp = false; //True if Door is UP
 bool DoorDown = false; //True if Door is DOWN
+bool UpDownScene = false; //True if Scene Up or Down Active
 enum DoorOpenClose { down, halfOpen, up };
 DoorOpenClose Door;
-DoorOpenClose lastDoorState;
 bool doorStatus = false; //True if doorSetScene has started
 bool doorDisable = false; //True if Door Movement has finished & Motor still on
 uint32_t startMillis = 0;
@@ -201,6 +201,7 @@ uint8_t sceneClose = 0;
 uint8_t sceneOpen = 0;
 uint8_t sceneNight = 0;
 bool doorMoving = false;
+bool DayNight = false; //True = Night
 
 
 // ################################################
