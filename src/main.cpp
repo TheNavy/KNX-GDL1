@@ -43,7 +43,7 @@ cyan:   Normal Mode with Serial Debug
 // ################################################
 // ### Debug MODE
 // ################################################
-//#define KDEBUG // comment this line to disable DEBUG mode
+#define KDEBUG // comment this line to disable DEBUG mode
 
 // ################################################
 // ### Include used Librarys
@@ -388,8 +388,8 @@ void setup() {
         Debug.println(F("Device is in factory mode. Starting programming mode..."));
         px.setPixelColor(0, 0, 0, 50); // blue
         px.show();
-        testStrip();
-        Konnekting.setProgState(true);
+        //testStrip();
+        Konnekting.toggleProgState();
         Debug.println(F("free ram: %d bytes"), Debug.freeRam());
     }
 }
