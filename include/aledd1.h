@@ -2,20 +2,13 @@
 
 #include "wiring_private.h" //for pinPeripheral
 
-//create a new Serial on Pins 1=TX and 0=RX
-Uart SerialKNX (&sercom2, 0, 1, SERCOM_RX_PAD_3, UART_TX_PAD_2); // Onboard TX&RX Pin
-//Interrupt handler for SerialKNX
-void SERCOM2_Handler()
-{
-    SerialKNX.IrqHandler();
-}
-
 //Hardware settings 
 #define PROG_BUTTON_PIN 3 //active low
 #define PROG_LED_PIN LED_BUILTIN
 #define LED_STRIP_PIN 5 //5V Pin!
 #define POWER_SUPPLY_PIN 4 //active low
 #define EEPROM_EMULATION_SIZE 2048
+#define SerialKNX Serial1 // Pin 0=RX 1=TX
 
 // custom serial port preparation function
 void prepareSerial(){
