@@ -14,8 +14,8 @@
 void prepareSerial(){
     Debug.println(F("Prepare serial"));
     SerialKNX.begin(19200, SERIAL_8E1);
-    pinPeripheral(0, PIO_SERCOM_ALT);
-    pinPeripheral(1, PIO_SERCOM_ALT);
+    //pinPeripheral(0, PIO_SERCOM_ALT); //Not needed because of HardwareSerial!
+    //pinPeripheral(1, PIO_SERCOM_ALT);
     Debug.println(F("Prepare serial *DONE*"));
 }
 
