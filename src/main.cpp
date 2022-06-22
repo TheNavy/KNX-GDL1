@@ -26,7 +26,7 @@ KONNEKTING Device Library 1.0.0-RC1:    http://librarymanager/All#Konnekting_dev
 red:    Missing Serial Connection to KNX-TPUART
 white:  KNX-TPUART active Program not loaded yet
 blue:   FactoryMode - Programm with Konnekting Suite
-green:  Normal Mode
+off:    Normal Mode ( Or Off ;) )
 cyan:   Normal Mode with Serial Debug
 */
 
@@ -360,9 +360,6 @@ void setup() {
         sceneClose = Konnekting.getUINT8Param(PARAM_scene_close);
         sceneOpen = Konnekting.getUINT8Param(PARAM_scene_open);
         sceneNight = Konnekting.getUINT8Param(PARAM_scene_night);
-
-        px.setPixelColor(0, 0, 50, 0); // blue
-        px.show();
         
 #ifdef KDEBUG
         px.setPixelColor(0, 0, 50, 50); // cyan
